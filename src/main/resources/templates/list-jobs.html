@@ -13,28 +13,28 @@
     <!-- TODO #1 - Use a loop to display job results in a table. -->
     <table th:fragment="job-table" th:each="job : ${jobs}" class="job-listing">
             <tr>
-                <td>ID: </td>
+                <td style="font-style:bold;">ID: </td>
                 <td th:text="${job.id}"></td>
             </tr>
             <tr>
-                <td>Name: </td>
+                <td style="font-style:bold; color:blue">Name: </td>
                 <td th:text="${job.name}"></td>
             </tr>
             <tr>
-                <td>Employer: </td>
-                <td th:text="${job.employer}"></td>
+                <td style="font-style:bold;">Employer: </td>
+                <td><a th:href="@{/list/jobs(column='employer',value=${job.employer})}" th:text="${job.employer}"></a></td>
             </tr>
             <tr>
-                <td>Location: </td>
-                <td th:text="${job.location}"></td>
+                <td style="font-style:bold;">Location: </td>
+                <td><a th:href="@{/list/jobs(column='location',value=${job.location})}" th:text="${job.location}"></a></td>
             </tr>
             <tr>
-                <td>Position Type: </td>
-                <td th:text="${job.positionType}"></td>
+                <td style="font-style:bold;">Position Type: </td>
+                <td><a th:href="@{/list/jobs(column='positionType',value=${job.positionType})}" th:text="${job.positionType}"></a></td>
             </tr>
             <tr>
-                <td>Core Competency: </td>
-                <td th:text="${job.coreCompetency}"></td>
+                <td style="font-style:bold;">Core Competency: </td>
+                <td><a th:href="@{/list/jobs(column='coreCompetency',value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a></td>
             </tr>
     </table>
 
